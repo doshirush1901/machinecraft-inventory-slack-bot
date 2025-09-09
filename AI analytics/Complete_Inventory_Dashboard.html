@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machinecraft Inventory Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .item-card { transition: transform 0.2s; cursor: pointer; }
+        .item-card:hover { transform: translateY(-2px); }
+        .price { color: #198754; font-weight: bold; }
+        .low-stock { color: #dc3545; }
+        .search-highlight { background-color: yellow; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏭 Machinecraft Inventory System</span>
+            <div class="d-flex">
+                <button class="btn btn-outline-light btn-sm me-2" onclick="showStats()">📊 Stats</button>
+                <button class="btn btn-outline-light btn-sm" onclick="exportData()">📥 Export</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <div class="card-header">Categories</div>
+                    <div class="list-group list-group-flush" id="categories">
+                        <a href="#" class="list-group-item list-group-item-action active" data-cat="all">All Items (10)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="mitsubishi">Mitsubishi (4)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="festo">FESTO (2)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="smc">SMC (1)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="other">Others (3)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <!-- Search -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search by part number, description, or brand...">
+                            <button class="btn btn-primary" onclick="searchItems()">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="d-flex justify-content-between mb-3">
+                    <span id="resultsCount">10 items found</span>
+                    <select class="form-select w-auto" id="sortSelect" onchange="sortItems()">
+                        <option value="part_number">Sort by Part Number</option>
+                        <option value="description">Sort by Description</option>
+                        <option value="price">Sort by Price</option>
+                        <option value="quantity">Sort by Quantity</option>
+                    </select>
+                </div>
+
+                <!-- Items Grid -->
+                <div class="row" id="itemsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div class="modal fade" id="statsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inventory Statistics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="statsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget Button -->
+    <button id="chatbotBtn" class="btn btn-primary rounded-circle" style="position: fixed; bottom: 32px; right: 32px; z-index: 1050; width: 60px; height: 60px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <i class="fas fa-comments fa-lg"></i>
+    </button>
+
+    <!-- Chatbot Modal -->
+    <div class="modal fade" id="chatbotModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title"><i class="fas fa-robot me-2"></i>Inventory Chatbot</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" style="max-height: 400px; overflow-y: auto; background: #f8f9fa;" id="chatHistory">
+                    <!-- Chat history will appear here -->
+                </div>
+                <div class="modal-footer">
+                    <div class="input-group">
+                        <input type="text" id="chatInput" class="form-control" placeholder="Ask me anything about your inventory..." autocomplete="off">
+                        <button class="btn btn-primary" id="sendChatBtn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="offcanvas offcanvas-end" tabindex="-1">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Your Cart</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body" id="cartItems"></div>
+        <div class="offcanvas-footer p-3">
+            <button class="btn btn-success w-100" id="checkoutBtn">Checkout (Export CSV)</button>
+        </div>
+    </div>
+
+    <!-- Add Cart button to navbar -->
+    <button class="btn btn-outline-primary ms-2" id="cartBtn"><i class="fas fa-shopping-cart"></i> Cart <span class="badge bg-danger" id="cartCount">0</span></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load inventory data from JSON file
+        let inventory = [];
+        let categories = [];
+        let filteredItems = [];
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadInventoryData();
+        });
+
+        async function loadInventoryData() {
+            try {
+                const response = await fetch('complete_inventory_data.json');
+                const data = await response.json();
+                inventory = data.items;
+                categories = data.categories;
+                filteredItems = [...inventory];
+                
+                console.log(`Loaded ${inventory.length} items from ${categories.length} categories`);
+                
+                // Update categories in the sidebar
+                updateCategories();
+                displayItems();
+                setupEventListeners();
+            } catch (error) {
+                console.error('Error loading inventory data:', error);
+                // Fallback to sample data if JSON loading fails
+                inventory = [
+                    {id: 1, part_number: "FX2N-16EX-ES/UL", description: "Mitsubishi PLC Input Module 16 Points", brand: "Mitsubishi", price: 750, quantity: 1, min_stock: 2, category: "mitsubishi"}
+                ];
+                filteredItems = [...inventory];
+                displayItems();
+                setupEventListeners();
+            }
+        }
+
+        function updateCategories() {
+            const categoriesContainer = document.getElementById('categories');
+            categoriesContainer.innerHTML = `
+                <a href="#" class="list-group-item list-group-item-action active" data-cat="all">
+                    <i class="fas fa-list me-2"></i>All Items
+                    <span class="badge bg-secondary float-end">${inventory.length}</span>
+                </a>
+            `;
+            
+            categories.forEach(cat => {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.className = 'list-group-item list-group-item-action';
+                link.setAttribute('data-cat', cat.name);
+                link.innerHTML = `
+                    <i class="fas fa-folder me-2"></i>${cat.name}
+                    <span class="badge bg-secondary float-end">${cat.count}</span>
+                `;
+                categoriesContainer.appendChild(link);
+            });
+        }
+
+        function setupEventListeners() {
+            // Category selection
+            document.querySelectorAll('#categories a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('#categories a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    filterItems();
+                });
+            });
+
+            // Search on Enter
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') searchItems();
+            });
+        }
+
+        function searchItems() {
+            currentSearch = document.getElementById('searchInput').value.trim();
+            filterItems();
+        }
+
+        function filterItems() {
+            filteredItems = inventory.filter(item => {
+                // Category filter
+                if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+                
+                // Search filter
+                if (currentSearch) {
+                    const searchTerm = currentSearch.toLowerCase();
+                    return item.part_number.toLowerCase().includes(searchTerm) ||
+                           item.description.toLowerCase().includes(searchTerm) ||
+                           (item.brand && item.brand.toLowerCase().includes(searchTerm));
+                }
+                
+                return true;
+            });
+            
+            displayItems();
+        }
+
+        function sortItems() {
+            const sortBy = document.getElementById('sortSelect').value;
+            filteredItems.sort((a, b) => {
+                switch(sortBy) {
+                    case 'part_number': return a.part_number.localeCompare(b.part_number);
+                    case 'description': return a.description.localeCompare(b.description);
+                    case 'price': return a.price - b.price;
+                    case 'quantity': return b.quantity - a.quantity;
+                    default: return 0;
+                }
+            });
+            displayItems();
+        }
+
+        function displayItems() {
+            const grid = document.getElementById('itemsGrid');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            resultsCount.textContent = `${filteredItems.length} items found`;
+            
+            if (filteredItems.length === 0) {
+                grid.innerHTML = '<div class="col-12 text-center py-5"><h4 class="text-muted">No items found</h4></div>';
+                return;
+            }
+            
+            grid.innerHTML = filteredItems.map(item => {
+                const highlightedPart = currentSearch ? 
+                    item.part_number.replace(new RegExp(currentSearch, 'gi'), 
+                    match => `<span class="search-highlight">${match}</span>`) : item.part_number;
+                
+                return `
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card item-card h-100" onclick="showItemDetails(${item.id})">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="card-title">${highlightedPart}</h6>
+                                </div>
+                                <p class="card-text small">${item.description}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">₹${item.price.toFixed(2)}</span>
+                                </div>
+                                <small class="text-muted">${item.brand || 'N/A'}</small>
+                                <div class="mt-1">
+                                    <span class="badge bg-light text-dark small">${item.category}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function showItemDetails(itemId) {
+            const item = inventory.find(i => i.id === itemId);
+            if (!item) return;
+            
+            alert(`Item Details:\n\nPart Number: ${item.part_number}\nDescription: ${item.description}\nBrand: ${item.brand || 'N/A'}\nCategory: ${item.category}\nPrice: ₹${item.price.toFixed(2)}`);
+        }
+
+        function showStats() {
+            const totalItems = inventory.length;
+            const lowStockItems = inventory.filter(item => item.quantity <= item.min_stock).length;
+            const totalValue = inventory.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const avgPrice = inventory.reduce((sum, item) => sum + item.price, 0) / totalItems;
+            
+            document.getElementById('statsContent').innerHTML = `
+                <div class="row text-center">
+                    <div class="col-3">
+                        <h3 class="text-primary">${totalItems}</h3>
+                        <p>Total Items</p>
+                    </div>
+                    <div class="col-3">
+                        <h3 class="text-danger">${lowStockItems}</h3>
+                        <p>Low Stock</p>
+                    </div>
+                    <div class="col-3">
+                        <h3 class="text-success">₹${totalValue.toFixed(0)}</h3>
+                        <p>Total Value</p>
+                    </div>
+                    <div class="col-3">
+                        <h3 class="text-info">₹${avgPrice.toFixed(0)}</h3>
+                        <p>Avg Price</p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Top Categories</h5>
+                    <div class="list-group">
+                        ${categories.slice(0, 10).map(cat => `
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                ${cat.name}
+                                <span class="badge bg-primary rounded-pill">${cat.count}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            new bootstrap.Modal(document.getElementById('statsModal')).show();
+        }
+
+        function exportData() {
+            const csv = "Part Number,Description,Brand,Category,Price,Quantity,Min Stock,Stock Status\n" +
+                       filteredItems.map(item => {
+                           const isLowStock = item.quantity <= item.min_stock;
+                           return `"${item.part_number}","${item.description}","${item.brand || ''}","${item.category}",${item.price},${item.quantity},${item.min_stock},"${isLowStock ? 'LOW' : 'OK'}"`;
+                       }).join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `inventory_export_${new Date().toISOString().split('T')[0]}.csv`;
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // Chatbot widget logic
+        let chatHistory = [];
+        const chatbotBtn = document.getElementById('chatbotBtn');
+        const chatbotModal = new bootstrap.Modal(document.getElementById('chatbotModal'));
+        const chatHistoryDiv = document.getElementById('chatHistory');
+        const chatInput = document.getElementById('chatInput');
+        const sendChatBtn = document.getElementById('sendChatBtn');
+
+        chatbotBtn.addEventListener('click', () => {
+            chatbotModal.show();
+            setTimeout(() => chatInput.focus(), 400);
+        });
+
+        sendChatBtn.addEventListener('click', sendChatMessage);
+        chatInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        });
+
+        function sendChatMessage() {
+            const userMsg = chatInput.value.trim();
+            if (!userMsg) return;
+            chatInput.value = '';
+            addChatMessage('user', userMsg);
+            chatInput.disabled = true;
+            sendChatBtn.disabled = true;
+            fetch('/ai-search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query: userMsg })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.answer) {
+                    addChatMessage('bot', data.answer);
+                } else {
+                    addChatMessage('bot', 'Sorry, I could not process your request.');
+                }
+            })
+            .catch(() => {
+                addChatMessage('bot', 'Error connecting to the AI service.');
+            })
+            .finally(() => {
+                chatInput.disabled = false;
+                sendChatBtn.disabled = false;
+                chatInput.focus();
+            });
+        }
+
+        function addChatMessage(sender, text) {
+            chatHistory.push({ sender, text });
+            renderChatHistory();
+        }
+
+        function renderChatHistory() {
+            chatHistoryDiv.innerHTML = chatHistory.map(msg => {
+                if (msg.sender === 'user') {
+                    return `<div class='text-end mb-2'><span class='badge bg-primary'>You</span><div class='bg-white border rounded p-2 d-inline-block mt-1'>${escapeHtml(msg.text)}</div></div>`;
+                } else {
+                    return `<div class='mb-2'><span class='badge bg-secondary'>Bot</span><div class='bg-light border rounded p-2 d-inline-block mt-1'>${escapeHtml(msg.text)}</div></div>`;
+                }
+            }).join('');
+            chatHistoryDiv.scrollTop = chatHistoryDiv.scrollHeight;
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/[&<>"']/g, function(tag) {
+                const charsToReplace = {
+                    '&': '&amp;',
+                    '<': '&lt;',
+                    '>': '&gt;',
+                    '"': '&quot;',
+                    "'": '&#39;'
+                };
+                return charsToReplace[tag] || tag;
+            });
+        }
+
+        // Cart logic
+        let cart = [];
+        function addToCart(item) {
+            if (!cart.find(i => i.part_number === item.part_number)) {
+                cart.push(item);
+                updateCartCount();
+            }
+        }
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+        function showCart() {
+            const cartSidebar = new bootstrap.Offcanvas(document.getElementById('cartSidebar'));
+            renderCartItems();
+            cartSidebar.show();
+        }
+        function renderCartItems() {
+            const cartItemsDiv = document.getElementById('cartItems');
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p class="text-muted">Your cart is empty.</p>';
+                return;
+            }
+            cartItemsDiv.innerHTML = cart.map(item => `
+                <div class='card mb-2'>
+                    <div class='card-body'>
+                        <h6>${item.part_number}</h6>
+                        <div>${item.description}</div>
+                        <div><strong>Price:</strong> ₹${item.price || 'N/A'}</div>
+                        <div><strong>Vendor:</strong> ${item.vendor || 'N/A'}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        document.getElementById('cartBtn').addEventListener('click', showCart);
+        document.getElementById('checkoutBtn').addEventListener('click', exportCartCSV);
+        function exportCartCSV() {
+            if (cart.length === 0) return;
+            const csv = 'Part Number,Description,Price,Vendor\n' + cart.map(item => `"${item.part_number}","${item.description}","${item.price || ''}","${item.vendor || ''}"`).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'cart_export.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+
+        // AI-powered search logic
+        async function aiSearch(query) {
+            const res = await fetch('/ai-search', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ query })
+            });
+            return await res.json();
+        }
+        document.getElementById('searchInput').addEventListener('keypress', async function(e) {
+            if (e.key === 'Enter') {
+                await handleAISearch();
+            }
+        });
+        document.getElementById('searchInput').nextElementSibling.addEventListener('click', handleAISearch);
+        async function handleAISearch() {
+            const query = document.getElementById('searchInput').value.trim();
+            if (!query) return;
+            const data = await aiSearch(query);
+            if (data.main_item) {
+                // Show main item and similar items
+                let html = `<div class='col-12'><div class='card p-3 mb-3'>
+                    <h5>${data.main_item.part_number || ''}</h5>
+                    <div>${data.main_item.description || ''}</div>
+                    <div><strong>Price:</strong> ₹${data.main_item.price || 'N/A'}</div>
+                    <div><strong>Vendor:</strong> ${data.main_item.vendor || 'N/A'}</div>
+                    <button class='btn btn-success mt-2' onclick='addToCart(${JSON.stringify(data.main_item)})'>Add to Cart</button>
+                </div></div>`;
+                if (data.similar_items && data.similar_items.length > 0) {
+                    html += `<div class='col-12'><h6>Similar Items</h6></div>`;
+                    html += data.similar_items.map(item => `
+                        <div class='col-12'><div class='card p-2 mb-2'>
+                            <h6>${item.part_number || ''}</h6>
+                            <div>${item.description || ''}</div>
+                            <div><strong>Price:</strong> ₹${item.price || 'N/A'}</div>
+                            <div><strong>Vendor:</strong> ${item.vendor || 'N/A'}</div>
+                            <button class='btn btn-outline-primary btn-sm mt-1' onclick='addToCart(${JSON.stringify(item)})'>Add to Cart</button>
+                        </div></div>
+                    `).join('');
+                }
+                document.getElementById('itemsGrid').innerHTML = html;
+            } else if (data.answer) {
+                document.getElementById('itemsGrid').innerHTML = `<div class='col-12'><div class='card p-3'><div>${data.answer.replace(/\n/g, '<br>')}</div></div></div>`;
+            } else {
+                document.getElementById('itemsGrid').innerHTML = `<div class='col-12 text-danger'>No results found.</div>`;
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machinecraft Inventory Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #6c757d;
+            --success-color: #198754;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+            --light-bg: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+            border-radius: 0.5rem;
+        }
+
+        .card-header {
+            background-color: white;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+        }
+
+        .item-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+
+        .item-card .card-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .item-card .card-text {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .price {
+            font-weight: 600;
+            color: var(--success-color);
+            font-size: 1rem;
+        }
+
+        .quantity.low {
+            color: var(--danger-color);
+        }
+
+        .quantity.ok {
+            color: var(--success-color);
+        }
+
+        .list-group-item {
+            border: none;
+            border-radius: 0;
+            padding: 0.75rem 1rem;
+            font-size: 0.9rem;
+        }
+
+        .list-group-item:hover {
+            background-color: var(--light-bg);
+        }
+
+        .list-group-item.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .search-highlight {
+            background-color: yellow;
+            padding: 0.1rem 0.2rem;
+        }
+
+        .stats-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stats-card h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .brand-tag {
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-warehouse me-2"></i>
+                Machinecraft Inventory
+            </a>
+            <div class="navbar-nav ms-auto">
+                <button class="btn btn-outline-light me-2" onclick="showStats()">
+                    <i class="fas fa-chart-bar me-1"></i>Statistics
+                </button>
+                <button class="btn btn-outline-light" onclick="exportData()">
+                    <i class="fas fa-download me-1"></i>Export
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-th-large me-2"></i>Categories
+                        </h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="list-group list-group-flush" id="categoriesList">
+                            <a href="#" class="list-group-item list-group-item-action active" data-category="all">
+                                <i class="fas fa-list me-2"></i>All Items
+                                <span class="badge bg-secondary float-end">1,247</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="card mt-3">
+                    <div class="card-header">
+                        <h6 class="mb-0">
+                            <i class="fas fa-filter me-2"></i>Filters
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Brand</label>
+                            <select class="form-select form-select-sm" id="brandFilter">
+                                <option value="">All Brands</option>
+                                <option value="Mitsubishi">Mitsubishi</option>
+                                <option value="FESTO">FESTO</option>
+                                <option value="SMC">SMC</option>
+                                <option value="Phoenix">Phoenix</option>
+                                <option value="Omron">Omron</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Price Range</label>
+                            <div class="row">
+                                <div class="col-6">
+                                    <input type="number" class="form-control form-control-sm" id="minPrice" placeholder="Min">
+                                </div>
+                                <div class="col-6">
+                                    <input type="number" class="form-control form-control-sm" id="maxPrice" placeholder="Max">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Stock Status</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="lowStock" checked>
+                                <label class="form-check-label" for="lowStock">Low Stock</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="inStock" checked>
+                                <label class="form-check-label" for="inStock">In Stock</label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm w-100" onclick="applyFilters()">
+                            Apply Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="col-md-9">
+                <!-- Search and Filters -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="searchInput" placeholder="Search by part number, description, or brand...">
+                                    <button class="btn btn-primary" onclick="searchItems()">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-select" id="sortSelect" onchange="sortItems()">
+                                    <option value="part_number">Sort by Part Number</option>
+                                    <option value="description">Sort by Description</option>
+                                    <option value="brand">Sort by Brand</option>
+                                    <option value="actual_quantity">Sort by Quantity</option>
+                                    <option value="net_price">Sort by Price</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Summary -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <span id="resultsCount">1,247</span> items found
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setView('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" onclick="setView('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Items Grid -->
+                <div class="row" id="itemsGrid">
+                    <!-- Items will be loaded here -->
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Items pagination" class="mt-4">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- Pagination will be generated here -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Detail Modal -->
+    <div class="modal fade" id="itemModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Item Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="itemModalBody">
+                    <!-- Item details will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="saveItemChanges()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Modal -->
+    <div class="modal fade" id="statsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inventory Statistics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="statsModalBody">
+                    <!-- Statistics will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="loading-overlay">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample inventory data
+        const inventoryData = [
+            {
+                id: 1,
+                part_number: "FX2N-16EX-ES/UL",
+                description: "Mitsubishi PLC Input Module 16 Points",
+                brand: "Mitsubishi",
+                list_price: 1250.00,
+                net_price: 750.00,
+                minimum_stock: 2,
+                actual_quantity: 1,
+                location: "Warehouse A",
+                rack: "A-1-1",
+                uom: "pc",
+                category: "PLC Modules"
+            },
+            {
+                id: 2,
+                part_number: "FX2N-16EYT-ESS/UL",
+                description: "Mitsubishi PLC Output Module 16 Points Transistor",
+                brand: "Mitsubishi",
+                list_price: 1350.00,
+                net_price: 810.00,
+                minimum_stock: 2,
+                actual_quantity: 3,
+                location: "Warehouse A",
+                rack: "A-1-2",
+                uom: "pc",
+                category: "PLC Modules"
+            },
+            {
+                id: 3,
+                part_number: "FX2N-2AD",
+                description: "Mitsubishi PLC Analog Input Module 2 Channels",
+                brand: "Mitsubishi",
+                list_price: 980.00,
+                net_price: 588.00,
+                minimum_stock: 1,
+                actual_quantity: 1,
+                location: "Warehouse A",
+                rack: "A-1-3",
+                uom: "pc",
+                category: "PLC Modules"
+            },
+            {
+                id: 4,
+                part_number: "MS6-LF-1/2-ERM",
+                description: "FESTO Filter 1/2 inch with Pressure Gauge",
+                brand: "FESTO",
+                list_price: 450.00,
+                net_price: 270.00,
+                minimum_stock: 5,
+                actual_quantity: 0,
+                location: "Warehouse B",
+                rack: "B-2-1",
+                uom: "pc",
+                category: "Pneumatic Components"
+            },
+            {
+                id: 5,
+                part_number: "MS6-LR-1/2-ERM",
+                description: "FESTO Pressure Regulator 1/2 inch",
+                brand: "FESTO",
+                list_price: 520.00,
+                net_price: 312.00,
+                minimum_stock: 3,
+                actual_quantity: 2,
+                location: "Warehouse B",
+                rack: "B-2-2",
+                uom: "pc",
+                category: "Pneumatic Components"
+            },
+            {
+                id: 6,
+                part_number: "6205-2RS",
+                description: "Deep Groove Ball Bearing 25x52x15mm",
+                brand: "SKF",
+                list_price: 180.00,
+                net_price: 108.00,
+                minimum_stock: 10,
+                actual_quantity: 8,
+                location: "Warehouse C",
+                rack: "C-3-1",
+                uom: "pc",
+                category: "Bearings"
+            },
+            {
+                id: 7,
+                part_number: "SMC-CJ2B10-15",
+                description: "SMC Cylinder Bore 10mm Stroke 15mm",
+                brand: "SMC",
+                list_price: 320.00,
+                net_price: 192.00,
+                minimum_stock: 4,
+                actual_quantity: 5,
+                location: "Warehouse B",
+                rack: "B-3-1",
+                uom: "pc",
+                category: "Pneumatic Components"
+            },
+            {
+                id: 8,
+                part_number: "PH-QUINT-PS/1AC/24DC/10",
+                description: "Phoenix Contact Power Supply 24V 10A",
+                brand: "Phoenix",
+                list_price: 890.00,
+                net_price: 534.00,
+                minimum_stock: 2,
+                actual_quantity: 1,
+                location: "Warehouse A",
+                rack: "A-2-1",
+                uom: "pc",
+                category: "Power Supplies"
+            },
+            {
+                id: 9,
+                part_number: "E3Z-T61",
+                description: "Omron Photoelectric Sensor Through Beam",
+                brand: "Omron",
+                list_price: 280.00,
+                net_price: 168.00,
+                minimum_stock: 6,
+                actual_quantity: 4,
+                location: "Warehouse A",
+                rack: "A-3-1",
+                uom: "pc",
+                category: "Sensors"
+            },
+            {
+                id: 10,
+                part_number: "FX3U-64MT/ESS",
+                description: "Mitsubishi PLC CPU Module 64 Points",
+                brand: "Mitsubishi",
+                list_price: 2100.00,
+                net_price: 1260.00,
+                minimum_stock: 1,
+                actual_quantity: 0,
+                location: "Warehouse A",
+                rack: "A-1-4",
+                uom: "pc",
+                category: "PLC Modules"
+            }
+        ];
+
+        // Global variables
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let currentSearch = '';
+        let currentSort = 'part_number';
+        let itemsPerPage = 12;
+        let filteredData = [...inventoryData];
+        let currentView = 'grid';
+
+        // Categories data
+        const categories = [
+            { id: 'all', name: 'All Items', count: inventoryData.length },
+            { id: 'plc', name: 'PLC Modules', count: 4 },
+            { id: 'pneumatic', name: 'Pneumatic Components', count: 3 },
+            { id: 'bearings', name: 'Bearings', count: 1 },
+            { id: 'power', name: 'Power Supplies', count: 1 },
+            { id: 'sensors', name: 'Sensors', count: 1 }
+        ];
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCategories();
+            displayItems(filteredData);
+            displayPagination(filteredData.length);
+            
+            // Add event listeners
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchItems();
+                }
+            });
+        });
+
+        // Load categories
+        function loadCategories() {
+            const categoriesList = document.getElementById('categoriesList');
+            
+            // Clear existing categories (except "All Items")
+            const allItemsLink = categoriesList.querySelector('[data-category="all"]');
+            categoriesList.innerHTML = '';
+            categoriesList.appendChild(allItemsLink);
+            
+            // Add category links
+            categories.forEach(category => {
+                if (category.id !== 'all') {
+                    const link = document.createElement('a');
+                    link.href = '#';
+                    link.className = 'list-group-item list-group-item-action';
+                    link.setAttribute('data-category', category.id);
+                    link.innerHTML = `
+                        <i class="fas fa-folder me-2"></i>
+                        ${category.name}
+                        <span class="badge bg-secondary float-end">${category.count}</span>
+                    `;
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        selectCategory(category.id);
+                    });
+                    categoriesList.appendChild(link);
+                }
+            });
+        }
+
+        // Select category
+        function selectCategory(categoryId) {
+            currentCategory = categoryId;
+            currentPage = 1;
+            
+            // Update active state
+            document.querySelectorAll('#categoriesList .list-group-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            document.querySelector(`[data-category="${categoryId}"]`).classList.add('active');
+            
+            filterAndDisplayItems();
+        }
+
+        // Search items
+        function searchItems() {
+            currentSearch = document.getElementById('searchInput').value.trim();
+            currentPage = 1;
+            filterAndDisplayItems();
+        }
+
+        // Apply filters
+        function applyFilters() {
+            currentPage = 1;
+            filterAndDisplayItems();
+        }
+
+        // Filter and display items
+        function filterAndDisplayItems() {
+            let filtered = [...inventoryData];
+            
+            // Apply search filter
+            if (currentSearch) {
+                const searchTerm = currentSearch.toLowerCase();
+                filtered = filtered.filter(item => 
+                    item.part_number.toLowerCase().includes(searchTerm) ||
+                    item.description.toLowerCase().includes(searchTerm) ||
+                    (item.brand && item.brand.toLowerCase().includes(searchTerm))
+                );
+            }
+            
+            // Apply category filter
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(item => {
+                    const categoryMap = {
+                        'plc': 'PLC Modules',
+                        'pneumatic': 'Pneumatic Components',
+                        'bearings': 'Bearings',
+                        'power': 'Power Supplies',
+                        'sensors': 'Sensors'
+                    };
+                    return item.category === categoryMap[currentCategory];
+                });
+            }
+            
+            // Apply brand filter
+            const brandFilter = document.getElementById('brandFilter').value;
+            if (brandFilter) {
+                filtered = filtered.filter(item => item.brand === brandFilter);
+            }
+            
+            // Apply price filter
+            const minPrice = parseFloat(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseFloat(document.getElementById('maxPrice').value) || Infinity;
+            filtered = filtered.filter(item => 
+                item.net_price >= minPrice && item.net_price <= maxPrice
+            );
+            
+            // Apply stock filter
+            const lowStock = document.getElementById('lowStock').checked;
+            const inStock = document.getElementById('inStock').checked;
+            
+            if (!lowStock && !inStock) {
+                filtered = [];
+            } else if (lowStock && !inStock) {
+                filtered = filtered.filter(item => item.actual_quantity <= item.minimum_stock);
+            } else if (!lowStock && inStock) {
+                filtered = filtered.filter(item => item.actual_quantity > item.minimum_stock);
+            }
+            
+            // Apply sorting
+            sortItems(filtered);
+            
+            filteredData = filtered;
+            displayItems(filtered);
+            displayPagination(filtered.length);
+            updateResultsCount(filtered.length);
+        }
+
+        // Sort items
+        function sortItems(data = filteredData) {
+            const sortBy = document.getElementById('sortSelect').value;
+            
+            data.sort((a, b) => {
+                switch (sortBy) {
+                    case 'part_number':
+                        return a.part_number.localeCompare(b.part_number);
+                    case 'description':
+                        return a.description.localeCompare(b.description);
+                    case 'brand':
+                        return (a.brand || '').localeCompare(b.brand || '');
+                    case 'actual_quantity':
+                        return b.actual_quantity - a.actual_quantity;
+                    case 'net_price':
+                        return a.net_price - b.net_price;
+                    default:
+                        return 0;
+                }
+            });
+        }
+
+        // Display items
+        function displayItems(items) {
+            const itemsGrid = document.getElementById('itemsGrid');
+            itemsGrid.innerHTML = '';
+            
+            if (items.length === 0) {
+                itemsGrid.innerHTML = `
+                    <div class="col-12 text-center py-5">
+                        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                        <h4 class="text-muted">No items found</h4>
+                        <p class="text-muted">Try adjusting your search criteria or category filter.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageItems = items.slice(startIndex, endIndex);
+            
+            pageItems.forEach(item => {
+                const itemCard = createItemCard(item);
+                itemsGrid.appendChild(itemCard);
+            });
+        }
+
+        // Create item card
+        function createItemCard(item) {
+            const col = document.createElement('div');
+            col.className = currentView === 'grid' ? 'col-lg-4 col-md-6 col-sm-12 mb-4' : 'col-12 mb-3';
+            
+            const stockStatus = item.actual_quantity <= item.minimum_stock ? 'low' : 'ok';
+            const stockClass = item.actual_quantity <= item.minimum_stock ? 'danger' : 'success';
+            
+            if (currentView === 'grid') {
+                col.innerHTML = `
+                    <div class="card item-card fade-in" onclick="showItemDetails(${item.id})">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h6 class="card-title">${highlightSearch(item.part_number)}</h6>
+                                <span class="badge bg-${stockClass}">${stockStatus.toUpperCase()}</span>
+                            </div>
+                            <p class="card-text">${highlightSearch(item.description)}</p>
+                            ${item.brand ? `<span class="brand-tag">${item.brand}</span>` : ''}
+                            <div class="mt-2">
+                                ${item.net_price ? `<div class="price">₹${item.net_price.toFixed(2)}</div>` : ''}
+                                <div class="quantity ${stockStatus}">
+                                    <i class="fas fa-boxes me-1"></i>
+                                    Qty: ${item.actual_quantity}
+                                    ${item.uom ? ` ${item.uom}` : ''}
+                                </div>
+                            </div>
+                            ${item.location ? `<small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i>${item.location}</small>` : ''}
+                        </div>
+                    </div>
+                `;
+            } else {
+                col.innerHTML = `
+                    <div class="card item-card fade-in" onclick="showItemDetails(${item.id})">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-md-3">
+                                    <h6 class="card-title mb-1">${highlightSearch(item.part_number)}</h6>
+                                    <small class="text-muted">${item.category}</small>
+                                </div>
+                                <div class="col-md-4">
+                                    <p class="card-text mb-1">${highlightSearch(item.description)}</p>
+                                    ${item.brand ? `<span class="brand-tag">${item.brand}</span>` : ''}
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    ${item.net_price ? `<div class="price">₹${item.net_price.toFixed(2)}</div>` : ''}
+                                </div>
+                                <div class="col-md-2 text-center">
+                                    <div class="quantity ${stockStatus}">
+                                        <i class="fas fa-boxes me-1"></i>
+                                        ${item.actual_quantity} ${item.uom || ''}
+                                    </div>
+                                    <span class="badge bg-${stockClass}">${stockStatus.toUpperCase()}</span>
+                                </div>
+                                <div class="col-md-1 text-end">
+                                    <i class="fas fa-chevron-right text-muted"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            return col;
+        }
+
+        // Highlight search terms
+        function highlightSearch(text) {
+            if (!currentSearch) return text;
+            const regex = new RegExp(`(${currentSearch})`, 'gi');
+            return text.replace(regex, '<span class="search-highlight">$1</span>');
+        }
+
+        // Display pagination
+        function displayPagination(total) {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+            
+            const pages = Math.ceil(total / itemsPerPage);
+            if (pages <= 1) return;
+            
+            // Previous button
+            const prevLi = document.createElement('li');
+            prevLi.className = `page-item ${currentPage === 1 ? 'disabled' : ''}`;
+            prevLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage - 1})">Previous</a>`;
+            pagination.appendChild(prevLi);
+            
+            // Page numbers
+            const startPage = Math.max(1, currentPage - 2);
+            const endPage = Math.min(pages, currentPage + 2);
+            
+            for (let i = startPage; i <= endPage; i++) {
+                const li = document.createElement('li');
+                li.className = `page-item ${i === currentPage ? 'active' : ''}`;
+                li.innerHTML = `<a class="page-link" href="#" onclick="changePage(${i})">${i}</a>`;
+                pagination.appendChild(li);
+            }
+            
+            // Next button
+            const nextLi = document.createElement('li');
+            nextLi.className = `page-item ${currentPage === pages ? 'disabled' : ''}`;
+            nextLi.innerHTML = `<a class="page-link" href="#" onclick="changePage(${currentPage + 1})">Next</a>`;
+            pagination.appendChild(nextLi);
+        }
+
+        // Change page
+        function changePage(page) {
+            currentPage = page;
+            displayItems(filteredData);
+            displayPagination(filteredData.length);
+        }
+
+        // Set view mode
+        function setView(view) {
+            currentView = view;
+            displayItems(filteredData);
+        }
+
+        // Update results count
+        function updateResultsCount(count) {
+            document.getElementById('resultsCount').textContent = count;
+        }
+
+        // Show item details
+        function showItemDetails(itemId) {
+            const item = inventoryData.find(i => i.id === itemId);
+            if (!item) return;
+            
+            const modalBody = document.getElementById('itemModalBody');
+            modalBody.innerHTML = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Part Information</h6>
+                        <table class="table table-sm">
+                            <tr><td><strong>Part Number:</strong></td><td>${item.part_number}</td></tr>
+                            <tr><td><strong>Description:</strong></td><td>${item.description}</td></tr>
+                            <tr><td><strong>Brand:</strong></td><td>${item.brand || 'N/A'}</td></tr>
+                            <tr><td><strong>Category:</strong></td><td>${item.category}</td></tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Pricing & Stock</h6>
+                        <table class="table table-sm">
+                            <tr><td><strong>List Price:</strong></td><td>₹${item.list_price?.toFixed(2) || 'N/A'}</td></tr>
+                            <tr><td><strong>Net Price:</strong></td><td>₹${item.net_price?.toFixed(2) || 'N/A'}</td></tr>
+                            <tr><td><strong>Minimum Stock:</strong></td><td>${item.minimum_stock}</td></tr>
+                            <tr><td><strong>Actual Quantity:</strong></td><td>${item.actual_quantity} ${item.uom || ''}</td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <h6>Location</h6>
+                        <table class="table table-sm">
+                            <tr><td><strong>Location:</strong></td><td>${item.location || 'N/A'}</td></tr>
+                            <tr><td><strong>Rack:</strong></td><td>${item.rack || 'N/A'}</td></tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Stock Status</h6>
+                        <div class="alert alert-${item.actual_quantity <= item.minimum_stock ? 'danger' : 'success'}">
+                            <i class="fas fa-${item.actual_quantity <= item.minimum_stock ? 'exclamation-triangle' : 'check-circle'} me-2"></i>
+                            ${item.actual_quantity <= item.minimum_stock ? 'Low Stock Alert' : 'Stock Level OK'}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            const modal = new bootstrap.Modal(document.getElementById('itemModal'));
+            modal.show();
+        }
+
+        // Show statistics
+        function showStats() {
+            const totalItems = inventoryData.length;
+            const lowStockItems = inventoryData.filter(item => item.actual_quantity <= item.minimum_stock).length;
+            const totalValue = inventoryData.reduce((sum, item) => sum + (item.net_price * item.actual_quantity), 0);
+            
+            const modalBody = document.getElementById('statsModalBody');
+            modalBody.innerHTML = `
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <h3>${totalItems}</h3>
+                            <p>Total Items</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <h3>${lowStockItems}</h3>
+                            <p>Low Stock Items</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="stats-card">
+                            <h3>₹${totalValue.toFixed(0)}</h3>
+                            <p>Total Inventory Value</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h5>Category Distribution</h5>
+                    <div class="list-group">
+                        ${categories.filter(cat => cat.id !== 'all').map(cat => `
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                ${cat.name}
+                                <span class="badge bg-primary rounded-pill">${cat.count}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            
+            const modal = new bootstrap.Modal(document.getElementById('statsModal'));
+            modal.show();
+        }
+
+        // Export data
+        function exportData() {
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + "Part Number,Description,Brand,Net Price,Actual Quantity,Location,Rack,Category\n"
+                + filteredData.map(item => 
+                    `"${item.part_number}","${item.description}","${item.brand || ''}","${item.net_price || ''}","${item.actual_quantity}","${item.location || ''}","${item.rack || ''}","${item.category}"`
+                ).join("\n");
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "inventory_export.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Save item changes (placeholder)
+        function saveItemChanges() {
+            alert('Item changes saved successfully!');
+            bootstrap.Modal.getInstance(document.getElementById('itemModal')).hide();
+        }
+    </script>
+</body>
+</html> 

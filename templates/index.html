@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machinecraft Internal Inventory System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .search-box {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .search-box:focus {
+            border-color: #667eea;
+        }
+        .search-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background 0.3s;
+        }
+        .search-button:hover {
+            background: #5a6fd8;
+        }
+        .results {
+            margin-top: 30px;
+        }
+        .item-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .part-number {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .description {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .item-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .brand {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        .stock-status {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .in-stock {
+            background: #e8f5e8;
+            color: #2e7d32;
+        }
+        .low-stock {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+        .out-of-stock {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .category-tag {
+            background: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .category-tag:hover {
+            background: #667eea;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏭 Machinecraft Internal Inventory System</h1>
+        <p>Search through 10.5M+ inventory items with natural language</p>
+    </div>
+    
+    <div class="search-container">
+        <div class="search-form">
+            <input type="text" class="search-box" id="searchInput" placeholder="Search for servo motors, pneumatic components, electrical parts...">
+            <button class="search-button" onclick="search()">Search</button>
+        </div>
+        
+        <div class="categories" id="categories">
+            <!-- Categories will be loaded here -->
+        </div>
+        
+        <div class="results" id="results">
+            <div class="loading">Enter a search term to get started...</div>
+        </div>
+    </div>
+
+    <script>
+        // Load categories on page load
+        fetch('/categories')
+            .then(response => response.json())
+            .then(data => {
+                const categoriesDiv = document.getElementById('categories');
+                data.forEach(category => {
+                    const tag = document.createElement('div');
+                    tag.className = 'category-tag';
+                    tag.innerHTML = `${category.icon} ${category.name} (${category.count})`;
+                    tag.onclick = () => search(category.name);
+                    categoriesDiv.appendChild(tag);
+                });
+            });
+
+        function search(query = null) {
+            const searchInput = document.getElementById('searchInput');
+            const queryText = query || searchInput.value;
+            
+            if (!queryText.trim()) return;
+            
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<div class="loading">Searching...</div>';
+            
+            fetch(`/search?q=${encodeURIComponent(queryText)}`)
+                .then(response => response.json())
+                .then(data => {
+                    displayResults(data);
+                })
+                .catch(error => {
+                    resultsDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+                });
+        }
+        
+        function displayResults(data) {
+            const resultsDiv = document.getElementById('results');
+            
+            if (data.error) {
+                resultsDiv.innerHTML = `<div class="error">${data.error}</div>`;
+                return;
+            }
+            
+            if (data.count === 0) {
+                resultsDiv.innerHTML = '<div class="loading">No results found. Try a different search term.</div>';
+                return;
+            }
+            
+            let html = `
+                <h3>${data.category} (${data.count} items)</h3>
+                <p>Total Value: ₹${data.total_value.toLocaleString()}</p>
+            `;
+            
+            data.items.forEach(item => {
+                const stockClass = item.stock_status === 'In Stock' ? 'in-stock' : 
+                                 item.stock_status === 'Low Stock' ? 'low-stock' : 'out-of-stock';
+                
+                html += `
+                    <div class="item-card" onclick="showProductDetail('${item.part_number}')">
+                        <div class="item-header">
+                            <div class="part-number">${item.icon} ${item.part_number}</div>
+                            <div class="price">${item.price_formatted}</div>
+                        </div>
+                        <div class="description">${item.description}</div>
+                        <div class="item-details">
+                            <div>
+                                <span class="brand">${item.brand}</span>
+                                <span class="stock-status ${stockClass}">${item.stock_status}</span>
+                            </div>
+                            <div>
+                                Qty: ${item.quantity} | Total: ${item.total_value_formatted}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            resultsDiv.innerHTML = html;
+        }
+        
+        function showProductDetail(partNumber) {
+            fetch(`/product/${partNumber}`)
+                .then(response => response.json())
+                .then(data => {
+                    alert(`Product Details:\n\nPart: ${data.part_number}\nDescription: ${data.description}\nBrand: ${data.brand}\nPrice: ₹${data.unit_price_inr.toLocaleString()}\nStock: ${data.quantity}\nCategory: ${data.category}`);
+                });
+        }
+        
+        // Allow Enter key to search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                search();
+            }
+        });
+    </script>
+</body>
+</html>
+    

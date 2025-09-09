@@ -1,0 +1,17 @@
+# Machinecraft Inventory Slack Bot Environment Variables
+# Copy this file to .env and fill in your values
+
+# Required: Your Slack Bot Token
+SLACK_BOT_TOKEN=your-slack-bot-token-here
+
+# Required: Your Slack App Signing Secret (get from Slack App settings)
+SLACK_SIGNING_SECRET=your-signing-secret-here
+
+# Optional: Database path (default: machinecraft_inventory_pipeline.db)
+DATABASE_PATH=machinecraft_inventory_pipeline.db
+
+# Optional: Flask environment
+FLASK_ENV=production
+
+# Optional: Log level
+LOG_LEVEL=INFO

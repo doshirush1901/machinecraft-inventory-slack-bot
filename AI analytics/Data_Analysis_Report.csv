@@ -1,0 +1,11 @@
+File Name,Total Rows,Total Columns,Data Quality Score,Key Columns Found,Missing Data %,Category,Notes
+Mitsubishi Stock SORTED.xlsx,78,8,85,Part number;Description;List Price;Net Price;Actual Quantity,12,Mitsubishi,Well structured with consistent column names
+FESTO Stock.xlsx,37,10,65,Description;Part name;Part number;UOM;Location,28,FESTO,Some unnamed columns, needs cleaning
+Bearing Stock.xlsx,93,9,70,Discription;Part number;Brand;Remark,25,Bearing,Good structure but typo in 'Description'
+SMC Stock.xlsx,99,7,60,Pneumatic Master Part List;Discription;Leadtime,35,SMC,Many unnamed columns, needs normalization
+Phoenix Stock.xlsx,45,6,75,Part Number;Description;Price;Stock,20,Phoenix,Clean structure, good data quality
+Omron Stock.xlsx,52,8,70,Part Number;Description;Brand;Price,30,Omron,Standard structure, some missing values
+Bearing Stock.xlsx,93,9,70,Discription;Part number;Brand;Remark,25,Bearing,Duplicate entry - same as above
+CERAMIX.xlsx,38,7,65,Part Number;Description;Price;Stock,32,CERAMIX,Heating elements, good structure
+CRYDOM STOCK.xlsx,41,6,80,Part Number;Description;Price;Stock,15,CRYDOM,Solid state relays, clean data
+Cylinder Stock.xlsx,67,8,75,Part Number;Description;Brand;Price;Stock,22,Cylinder,Pneumatic cylinders, well organized 

@@ -1,0 +1,3291 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "part_number": "ITEM_1",
+      "description": "Contactor 9A, with 1NO+1NC, 230V AC Coil Voltage, CMD00513",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 2,
+      "part_number": "ITEM_2",
+      "description": "CMD00521,Contactor 12A, 1NO+1NC, 230V AC Coil Voltage",
+      "brand": "",
+      "price": 0,
+      "quantity": 6,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 3,
+      "part_number": "ITEM_3",
+      "description": "Contactor 18A, with 1NO+1NC, 230V AC Coil Voltage,CMD00529",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 4,
+      "part_number": "ITEM_4",
+      "description": "Contactor 25A, 1NO+1NC, 230V AC Coil Voltage,CMD00537",
+      "brand": "",
+      "price": 0,
+      "quantity": 5,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 5,
+      "part_number": "ITEM_5",
+      "description": "CMD00545,Contactor 32A, 1NO+1NC, 230V AC Coil Voltage",
+      "brand": "",
+      "price": 0,
+      "quantity": 1,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 6,
+      "part_number": "ITEM_6",
+      "description": "Contactor 40A, 1NO+1NC, 230V AC Coil Voltage CMD00561",
+      "brand": "",
+      "price": 0,
+      "quantity": 1,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 7,
+      "part_number": "ITEM_7",
+      "description": "Contactor 50A, 1NO+1NC, 230V AC Coil Voltage CMD00569",
+      "brand": "",
+      "price": 0,
+      "quantity": 2,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 8,
+      "part_number": "ITEM_8",
+      "description": "Contactor 65A, 1NO+1NC, 230V AC Coil Voltage  CMD00577",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 9,
+      "part_number": "ITEM_9",
+      "description": "Art.No- 276414 Control Relay With 2 NO + 2 NC Coil Suffix (24VDC)",
+      "brand": "",
+      "price": 0,
+      "quantity": 11,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 10,
+      "part_number": "ITEM_10",
+      "description": "Art.No- 276379 Control Relay With 3 NO + 1 NC Coil Suffix (24VDC)",
+      "brand": "",
+      "price": 0,
+      "quantity": 2,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 11,
+      "part_number": "ITEM_11",
+      "description": "Miniature Circuit BreakersArt No -242174 Tripping Characteristics Curve -B  AMP-6",
+      "brand": "",
+      "price": 0,
+      "quantity": 18,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 12,
+      "part_number": "ITEM_12",
+      "description": "Miniature Circuit BreakersArt No -242176 Tripping Characteristics Curve -B  AMP-10",
+      "brand": "",
+      "price": 0,
+      "quantity": 31,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 13,
+      "part_number": "ITEM_13",
+      "description": "Miniature Circuit BreakersArt No -242200 Tripping Characteristics Curve -C  AMP-6",
+      "brand": "",
+      "price": 0,
+      "quantity": 13,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 14,
+      "part_number": "ITEM_14",
+      "description": "Miniature Circuit BreakersArt No -242202 Tripping Characteristics Curve -C  AMP-10",
+      "brand": "",
+      "price": 0,
+      "quantity": 5,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 15,
+      "part_number": "ITEM_15",
+      "description": "Miniature Circuit BreakersArt No -242206 Tripping Characteristics Curve -C  AMP-16",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 16,
+      "part_number": "ITEM_16",
+      "description": "Miniature Circuit BreakersArt No -242399 Tripping Characteristics Curve -C Amp-6/ No of Pole-2",
+      "brand": "",
+      "price": 0,
+      "quantity": 28,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 17,
+      "part_number": "ITEM_17",
+      "description": "Miniature Circuit BreakersArt No -242401 Tripping Characteristics Curve -C Amp-10 No of Pole-/2",
+      "brand": "",
+      "price": 0,
+      "quantity": 9,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 18,
+      "part_number": "ITEM_18",
+      "description": "Miniature Circuit BreakersArt No -242406 Tripping Characteristics Curve -C Amp-20 No of Pole-/2",
+      "brand": "",
+      "price": 0,
+      "quantity": 30,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 19,
+      "part_number": "ITEM_19",
+      "description": "Miniature Circuit BreakersArt No -242468 Tripping Characteristics Curve -C Amp-6/ No of Pole-3",
+      "brand": "",
+      "price": 0,
+      "quantity": 3,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 20,
+      "part_number": "ITEM_20",
+      "description": "Miniature Circuit BreakersArt No -242470 Tripping Characteristics Curve -C Amp-10 No of Pole-3",
+      "brand": "",
+      "price": 0,
+      "quantity": 10,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 21,
+      "part_number": "ITEM_21",
+      "description": "Miniature Circuit BreakersArt No -242475 Tripping Characteristics Curve -C Amp-20 No of Pole-/3",
+      "brand": "",
+      "price": 0,
+      "quantity": 16,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 22,
+      "part_number": "ITEM_22",
+      "description": "Miniature Circuit BreakersArt No -242476 Tripping Characteristics Curve -C Amp-25 No of Pole-/3",
+      "brand": "",
+      "price": 0,
+      "quantity": 24,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 23,
+      "part_number": "ITEM_23",
+      "description": "Miniature Circuit BreakersArt No -242477 Tripping Characteristics Curve -C Amp-32 No of Pole-/3",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 24,
+      "part_number": "ITEM_24",
+      "description": "CMD00692 ,Overload relay  1.0-1.6A (6~38A)",
+      "brand": "",
+      "price": 0,
+      "quantity": 17,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 25,
+      "part_number": "ITEM_25",
+      "description": "CMD00694,Overload relay 2.5-4.0 (6~38A)",
+      "brand": "",
+      "price": 0,
+      "quantity": 6,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 26,
+      "part_number": "ITEM_26",
+      "description": "5.5.8",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 27,
+      "part_number": "ITEM_27",
+      "description": "Overload relay  4-6A (6~38A)CMD00695",
+      "brand": "",
+      "price": 0,
+      "quantity": 2,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 28,
+      "part_number": "ITEM_28",
+      "description": "CMD00698,Overload relay 9-13A (6~38A)",
+      "brand": "",
+      "price": 0,
+      "quantity": 5,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 29,
+      "part_number": "ITEM_29",
+      "description": "271061",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 30,
+      "part_number": "ITEM_30",
+      "description": "Moeller Series 250A 25kA 3Pole",
+      "brand": "",
+      "price": 0,
+      "quantity": 1,
+      "min_stock": 0,
+      "category": "Eaton MCCB MCB Contactor"
+    },
+    {
+      "id": 31,
+      "part_number": "S8FS-C10024J",
+      "description": "Item from Omron",
+      "brand": "OMRON",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Omron"
+    },
+    {
+      "id": 32,
+      "part_number": "S82Y-FSC150DIN",
+      "description": "Item from Omron",
+      "brand": "OMRON",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Omron"
+    },
+    {
+      "id": 33,
+      "part_number": "FQE-500W-230V MANFA",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 34,
+      "part_number": "FQE-350W-230V MANFA",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 35,
+      "part_number": "FQE-350W-230V MANKA",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 36,
+      "part_number": "FQE-500W-230V MANKA",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 37,
+      "part_number": "HQE-250W-230V MANFA",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 38,
+      "part_number": "HQE-150W-230V MANFA",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 39,
+      "part_number": "Part number",
+      "description": "Item from CERAMIX",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CERAMIX"
+    },
+    {
+      "id": 40,
+      "part_number": "FX5U-64MT/ESS",
+      "description": "Base Unit (Programmable Controller)",
+      "brand": "",
+      "price": 31020.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 41,
+      "part_number": "FX5-16EX/ES",
+      "description": "Extension Unit (Programmable Controller)",
+      "brand": "",
+      "price": 4980.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 42,
+      "part_number": "FX5-16ET/ESS",
+      "description": "Extension Unit (Programmable Controller)",
+      "brand": "",
+      "price": 8920.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 43,
+      "part_number": "FX5-16EYT/ESS",
+      "description": "Extension Unit (Programmable Controller)",
+      "brand": "",
+      "price": 5640.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 44,
+      "part_number": "FX5-16EX/ES-BS",
+      "description": "Extension Unit (Programmable Controller)",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 45,
+      "part_number": "FX5-1PSU-5V",
+      "description": "Power Supply Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 5420.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 46,
+      "part_number": "FX5-4AD",
+      "description": "Input Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 14940.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 47,
+      "part_number": "FX5-4AD-ADP",
+      "description": "Adaptor (for Programmable Controller)",
+      "brand": "",
+      "price": 8820.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 48,
+      "part_number": "FX5-4AD-TC-ADP",
+      "description": "Adaptor (for Programmable Controller)",
+      "brand": "",
+      "price": 9980.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 49,
+      "part_number": "FX5-4DA",
+      "description": "Output Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 16040.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 50,
+      "part_number": "FX5-4DA-ADP",
+      "description": "Adaptor (for Programmable Controller)",
+      "brand": "",
+      "price": 9500.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 51,
+      "part_number": "FX5-8AD",
+      "description": "Input Model (for Programmable Controller)",
+      "brand": "",
+      "price": 17820.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 52,
+      "part_number": "FX5-40SSC-S",
+      "description": "iQ-F-SSCNET III/H 4 axes simple motion module",
+      "brand": "",
+      "price": 36340.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 53,
+      "part_number": "FX5-80SSC-S",
+      "description": "iQ-F-SSCNET III/H 8 axes simple motion module",
+      "brand": "",
+      "price": 43280.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 54,
+      "part_number": "FX5UC-32MT/DSS-TS",
+      "description": "Base Unit (Programmable Controller)",
+      "brand": "",
+      "price": 20520.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 55,
+      "part_number": "FX5-C32EX/DS-TS",
+      "description": "Input Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 10840.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 56,
+      "part_number": "FX5-C32ET/DSS-TS",
+      "description": "I/O Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 10840.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 57,
+      "part_number": "FX5-C32EYT/DSS-TS",
+      "description": "Output Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 10840.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 58,
+      "part_number": "FX5-C1PS-5V",
+      "description": "Power Supply Unit (for Programmable Controller)",
+      "brand": "",
+      "price": 5600.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 59,
+      "part_number": "FX5-CNV-IFC",
+      "description": "Adaptor (for Programmable Controller)",
+      "brand": "",
+      "price": 1880.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 60,
+      "part_number": "FX3U-64MT/ESS",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 61,
+      "part_number": "FX2N-16EYT-ESS/UL",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 62,
+      "part_number": "FX2N-8EYT-ESS/UL",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 63,
+      "part_number": "FX2N-2AD",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 64,
+      "part_number": "FX2N-16EX-ES/UL",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 65,
+      "part_number": "GT2715-XTBD",
+      "description": "15 inch display",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 66,
+      "part_number": "HG-KN43",
+      "description": "1.3Nm, 400W, 3000 RPM plain shaft,\nwithout brake servo motor compatible\nwith SSCNET III/H",
+      "brand": "",
+      "price": 13580.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 67,
+      "part_number": "MR-JE-40C",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 15800.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 68,
+      "part_number": "MR-J3ENCBL5M-A2-L",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 1720.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 69,
+      "part_number": "MR-PWS2CBL03M-A2-L",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 720.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 70,
+      "part_number": "MR-BAT6V1SET-A",
+      "description": "Battery for MR-J4-GF/GF-RJ, MR-JE-B/C",
+      "brand": "",
+      "price": 920.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 71,
+      "part_number": "HG-KN73J",
+      "description": "2.4Nm,750W, 3000 RPM Plain Shaft,\nWithout brake servo motor compatible \nwith SSCNET III/H",
+      "brand": "",
+      "price": 18280.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 72,
+      "part_number": "MR-JE-70C",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 21120.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 73,
+      "part_number": "MR-J3ENSCBL5M-L",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 4300.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 74,
+      "part_number": "MR-J4-15-KB4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 75,
+      "part_number": "MR-JE-200B4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 76,
+      "part_number": "MR-JE-70B",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 77,
+      "part_number": "HG-SR1024",
+      "description": "4.8Nm, 1Kw, 2000RPM plain shaft without\nbrake 400v class servo motor",
+      "brand": "",
+      "price": 27820.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 78,
+      "part_number": "MR-J4-100B4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 51800.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 79,
+      "part_number": "MR-J3ENSCBL10M-L",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 1720.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 80,
+      "part_number": "MS3106F1810S+TB",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 600.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 81,
+      "part_number": "MR-J3ENSCBL20M-L",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 82,
+      "part_number": "HG-SR2024",
+      "description": "9.5Nm,2kW,2000 RPM plain shaft without\nbrake 400V class servo motor",
+      "brand": "",
+      "price": 39240.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 83,
+      "part_number": "MR-J4-200B4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 57360.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 84,
+      "part_number": "MS3106F2222S+TB",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 640.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 85,
+      "part_number": "MR-J3ENCBL10M-A2-L",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 86,
+      "part_number": "MR-ENECBL10M-H-MTH",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 87,
+      "part_number": "MR-BKCN",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 88,
+      "part_number": "MR-BKCNS1",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 89,
+      "part_number": "MR-J3-D05",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 90,
+      "part_number": "MR-D05UDL3M-B",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 91,
+      "part_number": "HG-SR2024B",
+      "description": "9.5Nm,2kW,2000 RPM plain shaft with\nbrake 400V class servo motor",
+      "brand": "",
+      "price": 52340.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 92,
+      "part_number": "MR-CCN1",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 720.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 93,
+      "part_number": "MR- J3CN1",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 94,
+      "part_number": "HG-SR3524B",
+      "description": "16.7 Nm, 3.5kW, 2000 RPM plain shaft with\nbrake 400V class servo motor",
+      "brand": "",
+      "price": 61540.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 95,
+      "part_number": "MR-J4-350B4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 61560.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 96,
+      "part_number": "HG-SR5024B",
+      "description": "23.9 Nm, 5kW, 2000 RPM plain shaft with\nbrake 400V class servo motor",
+      "brand": "",
+      "price": 87920.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 97,
+      "part_number": "MR-J4-500B4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 78640.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 98,
+      "part_number": "HG-SR7024B",
+      "description": "33.4 Nm, 7kW, 2000 RPM plain shaft with\nbrake 400V class servo motor",
+      "brand": "",
+      "price": 98160.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 99,
+      "part_number": "MR-J4-700B4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 94600.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 100,
+      "part_number": "MS3106F3217S+TB",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 800.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 101,
+      "part_number": "MR-J3ENCBL5M-A2(1)-L",
+      "description": "5m Encoder Cable, direct connection type, Standard",
+      "brand": "",
+      "price": 1720.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 102,
+      "part_number": "MR-J3ENCBL10M-A2(1)-L",
+      "description": "10m Encoder Cable, direct connection type, Standard",
+      "brand": "",
+      "price": 3260.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 103,
+      "part_number": "MR-J3BUS03M",
+      "description": "0.3m SSCNET III CABLE (standard cord inside cabinet)\ncompatible with SSCNET III(/H), Standard",
+      "brand": "",
+      "price": 3700.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 104,
+      "part_number": "MR-J3BUS1M",
+      "description": "1m SSCNET III CABLE (standard cord inside cabinet)\ncompatible with SSCNET III(/H), Standard",
+      "brand": "",
+      "price": 3920.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 105,
+      "part_number": "MR-J3BUS3M",
+      "description": "3m SSCNET III CABLE (standard cord inside cabinet)\ncompatible with SSCNET III(/H), Standard",
+      "brand": "",
+      "price": 4440.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 106,
+      "part_number": "MR-BAT6V1SET",
+      "description": "Battery for MR-J4-B/ B-RJ, MR-J4-A/ A-R-J",
+      "brand": "",
+      "price": 840.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 107,
+      "part_number": "MR-JR-15KB4",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 108,
+      "part_number": "HG-JR-15K1M4BK",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 109,
+      "part_number": "HG-JR7034",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 110,
+      "part_number": "HG-JR3534",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 111,
+      "part_number": "HG-SN202J",
+      "description": "Item from Old Mitsubishi",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Old Mitsubishi"
+    },
+    {
+      "id": 112,
+      "part_number": "GP Epoxy Thinner 002",
+      "description": "Item from GRAND POLYCOAT STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "GRAND POLYCOAT STOCK"
+    },
+    {
+      "id": 113,
+      "part_number": "GP PU Thinner 001",
+      "description": "Item from GRAND POLYCOAT STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "GRAND POLYCOAT STOCK"
+    },
+    {
+      "id": 114,
+      "part_number": "GP Epoxy ZP HB Primer Grey M/F, 3:1",
+      "description": "Item from GRAND POLYCOAT STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "GRAND POLYCOAT STOCK"
+    },
+    {
+      "id": 115,
+      "part_number": "GP Bond 141 Ral 7035 SG , 5:1",
+      "description": "Item from GRAND POLYCOAT STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "GRAND POLYCOAT STOCK"
+    },
+    {
+      "id": 116,
+      "part_number": "GP pollster putty ( PU putty)",
+      "description": "Item from GRAND POLYCOAT STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "GRAND POLYCOAT STOCK"
+    },
+    {
+      "id": 117,
+      "part_number": "2LHLR",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 118,
+      "part_number": "2ALRF3L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 119,
+      "part_number": "2ALRF4L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 120,
+      "part_number": "2ALRF8L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 121,
+      "part_number": "2ALRF6L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 122,
+      "part_number": "2ALRF3L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 123,
+      "part_number": "2ALRF4L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 124,
+      "part_number": "2ALRF8L",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 125,
+      "part_number": "2LHLR",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 126,
+      "part_number": "2ASLR3L-2P",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 127,
+      "part_number": "2ASLR3L-3P",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 128,
+      "part_number": "2LHLR",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 129,
+      "part_number": "2ASLR8L-2P",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 130,
+      "part_number": "2AS2-3P",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 131,
+      "part_number": "2AS2-2P",
+      "description": "Item from TEKNIC",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "TEKNIC"
+    },
+    {
+      "id": 132,
+      "part_number": "SFD-A2B-M20",
+      "description": "Item from Autonics",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Autonics"
+    },
+    {
+      "id": 133,
+      "part_number": "SFD-KL",
+      "description": "Item from Autonics",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Autonics"
+    },
+    {
+      "id": 134,
+      "part_number": "D08301-240C-SP-BIS-BB-10-LPG",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Diamond",
+      "price": 326.1492,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 135,
+      "part_number": "D12001-160C-SP-BIS-BB-10-LPG",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Diamond",
+      "price": 518.96,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 136,
+      "part_number": "D16001-120C-SP-BIS-BB-10-LPG",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Diamond",
+      "price": 1007.76,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 137,
+      "part_number": "D16002-120C-SP-BIS-BB-10-LPG",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Diamond",
+      "price": 2124.98,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 138,
+      "part_number": "D16003-120C-SP-BIS-BB-10-LPG",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Diamond",
+      "price": 3189.1600000000003,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 139,
+      "part_number": "R 1278",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 316.32,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 140,
+      "part_number": "R 1911",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 500.64,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 141,
+      "part_number": "R 2517",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 961.92,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 142,
+      "part_number": "DR 2517",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 2016.48,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 143,
+      "part_number": "TR 2517",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 3113.7599999999998,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 144,
+      "part_number": "QR 80",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 5759.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 145,
+      "part_number": "R 1278V",
+      "description": "Item from Sprocket & Chain",
+      "brand": "Renold",
+      "price": 587.04,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Sprocket & Chain"
+    },
+    {
+      "id": 146,
+      "part_number": "FSD 208 NCF S4N 3PNBSP SS304 - 24VDC",
+      "description": "Item from Precision Valve",
+      "brand": "",
+      "price": 3643.0,
+      "quantity": 4,
+      "min_stock": 0,
+      "category": "Precision Valve"
+    },
+    {
+      "id": 147,
+      "part_number": "FSD 208 NCF S4N 3PNBSP SS304 - 230VAC",
+      "description": "Item from Precision Valve",
+      "brand": "",
+      "price": 3643.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Precision Valve"
+    },
+    {
+      "id": 148,
+      "part_number": "FSD 2010 NCF S4N 3PNBSP SS304 - 24VDC",
+      "description": "Item from Precision Valve",
+      "brand": "",
+      "price": 6023.0,
+      "quantity": 1,
+      "min_stock": 0,
+      "category": "Precision Valve"
+    },
+    {
+      "id": 149,
+      "part_number": "FSD 2010 NCF S4N 3PNBSP SS304 - 230VAC",
+      "description": "Item from Precision Valve",
+      "brand": "",
+      "price": 6023.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Precision Valve"
+    },
+    {
+      "id": 150,
+      "part_number": "FSD2010 NCS",
+      "description": "Item from Precision Valve",
+      "brand": "",
+      "price": 920.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Precision Valve"
+    },
+    {
+      "id": 151,
+      "part_number": "FSD2010 NCS",
+      "description": "Item from Precision Valve",
+      "brand": "",
+      "price": 920.0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Precision Valve"
+    },
+    {
+      "id": 152,
+      "part_number": "04 PIn Plug & Socket assly ICO C\n[10A-250/400V] PG11 Th. \nMale Insert 0120 004 M011 \nFemale Insert 0120 004 F011\n Hood Top Entry 0192 003 BD34 \nHousing Surface Mtg. 0192 003 BE24",
+      "description": "Item from INDO ELECTRICALS",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "INDO ELECTRICALS"
+    },
+    {
+      "id": 153,
+      "part_number": "16 Pin Plug & Socket assly ICO A \n[16A-500V] PG 21 \nMale Insert 0110 016 M011 \nFemale Insert 0110 016 F011 \nHood Side Entry 0191 016 BC10 \nHousing Surface Mounting 0191 016 BE10",
+      "description": "Item from INDO ELECTRICALS",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "INDO ELECTRICALS"
+    },
+    {
+      "id": 154,
+      "part_number": "24 Pin Plug & Socket assly ICO A\n[16A-500V] PG 29Th.\nMale Insert 0110 024 M011\nFemale Insert 0110 024 F011\nHood Side Entry 0191 024 AC11\nHousing Bulkhead Mtg. 0191 024 PM40",
+      "description": "Item from INDO ELECTRICALS",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "INDO ELECTRICALS"
+    },
+    {
+      "id": 155,
+      "part_number": "HGH 15CA ZAC",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 156,
+      "part_number": "HGH 20CA ZAC",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 157,
+      "part_number": "HGH 25CA ZAC",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 158,
+      "part_number": "HGH 30CA ZAC",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 159,
+      "part_number": "HGH 35CA ZAC",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 160,
+      "part_number": "HGR 15R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 161,
+      "part_number": "HGR 20R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 162,
+      "part_number": "HGR 25R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 163,
+      "part_number": "HGR 30R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 164,
+      "part_number": "HGR 35R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 165,
+      "part_number": "Part number",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 166,
+      "part_number": "HSR15R1SS",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 167,
+      "part_number": "HSR20R1SS",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 168,
+      "part_number": "HSR25R1SS",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 169,
+      "part_number": "HSR30R1SS",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 170,
+      "part_number": "HSR35R1SS",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 171,
+      "part_number": "HSR15R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 172,
+      "part_number": "HSR20R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 173,
+      "part_number": "HSR25R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 174,
+      "part_number": "HSR30R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 175,
+      "part_number": "HSR35R xxH",
+      "description": "Item from Linear Rail",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Linear Rail"
+    },
+    {
+      "id": 176,
+      "part_number": "4510062U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 177,
+      "part_number": "4510022U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 178,
+      "part_number": "4510002U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 179,
+      "part_number": "4510012U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 180,
+      "part_number": "4510042U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 181,
+      "part_number": "4520002U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 182,
+      "part_number": "4520062U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 183,
+      "part_number": "4520022U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 184,
+      "part_number": "4520012U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 185,
+      "part_number": "4520014U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 186,
+      "part_number": "4520064U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 187,
+      "part_number": "4520063U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 188,
+      "part_number": "4520003U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 189,
+      "part_number": "4520016U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 190,
+      "part_number": "4520066U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 191,
+      "part_number": "4520065U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 192,
+      "part_number": "4521061U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 193,
+      "part_number": "4521011U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 194,
+      "part_number": "4521013U",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 195,
+      "part_number": "1119753",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 196,
+      "part_number": "1119803",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 197,
+      "part_number": "1119754",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 198,
+      "part_number": "1119804",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 199,
+      "part_number": "1119757",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 200,
+      "part_number": "1119404",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 201,
+      "part_number": "1119504",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 202,
+      "part_number": "1119604",
+      "description": "Item from LAPP STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "LAPP STOCK"
+    },
+    {
+      "id": 203,
+      "part_number": "REF-H-50",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 204,
+      "part_number": "NBB5-18GM50-E2-V1",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 205,
+      "part_number": "OBS4000-18GM60-E5-V1",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 206,
+      "part_number": "OBE10M-18GM60-SE5-V1",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 207,
+      "part_number": "LGS25-1200-IO/110/115b",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 208,
+      "part_number": "OMH-L ESC-65",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 209,
+      "part_number": "OMH-SLCT-01",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 210,
+      "part_number": "DK20-9,5/110/124",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 211,
+      "part_number": "CBB8-18GS75-E2-V1",
+      "description": "Item from PNF STOCK",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PNF STOCK"
+    },
+    {
+      "id": 212,
+      "part_number": "D2E133AM4723",
+      "description": "Item from EBM PAPST",
+      "brand": "EBM PAPST",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "EBM PAPST"
+    },
+    {
+      "id": 213,
+      "part_number": "PLC-RSC-24DC/21-21, (2967060)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 214,
+      "part_number": "PLC-RPIT-24DC/21, (2900299)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 215,
+      "part_number": "TB 2,5 EI (3246010)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 216,
+      "part_number": "TB 4 EI (3246023)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 217,
+      "part_number": "TB 4-TWIN EI (3214194)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 218,
+      "part_number": "TB 4-2L EI (3214233)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 219,
+      "part_number": "TB 6 EI (3246036)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 220,
+      "part_number": "TB 10 EI (3246049)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 221,
+      "part_number": "TB 16 EI (5792172)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 222,
+      "part_number": "1008N (1085256)",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 223,
+      "part_number": "2910586",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 224,
+      "part_number": "2966692",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 225,
+      "part_number": "2966838",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 226,
+      "part_number": "CD 25X80 2M I, WIRING DUCT,GREY",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 227,
+      "part_number": "CD 40X80 2M I, WIRING DUCT,GREY",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 228,
+      "part_number": "CD 60X80 2M I, WIRING DUCT,GREY",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 229,
+      "part_number": "CD 80X80 2M I, WIRING DUCT,GREY",
+      "description": "Item from PHOENIX.",
+      "brand": "PHOENIX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "PHOENIX."
+    },
+    {
+      "id": 230,
+      "part_number": "17A230HSAC",
+      "description": "Item from HICOOL STOCK",
+      "brand": "HICOOL",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "HICOOL STOCK"
+    },
+    {
+      "id": 231,
+      "part_number": "ELS4825",
+      "description": "Item from CRYDOM STOCK",
+      "brand": "CRYDOM",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "CRYDOM STOCK"
+    },
+    {
+      "id": 232,
+      "part_number": "SPUR GEAR - 6DP X 18 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 233,
+      "part_number": "BEVEL GEAR - 6DP X 24 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 234,
+      "part_number": "M.S RACK : 6DP X 1.5\" X 1.5\" X 58\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 235,
+      "part_number": "M.S RACK - 1.5\" X 1.5\" X 6DP X 42\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 236,
+      "part_number": "M.S RACK - 1.5\" X 1.5\" X 6DP X 48\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 237,
+      "part_number": "M.S RACK - 1.5\" X 1.5\" X 6DP X 36\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 238,
+      "part_number": "M.S RACK - 1.5\" X 1.5\" X 6DP X 52\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 239,
+      "part_number": "M.S RACK 1.5\" X 1.5\" X 6DP X 40\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 240,
+      "part_number": "M.S RACK 1.5\" X 1.5\" X 6DP X 38\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 241,
+      "part_number": "M.S RACK 1.5\" X 1.5\" X 6DP X 46\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 242,
+      "part_number": "M.S RACK 1.5\" X 1.5\" X 6DP X 44\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 243,
+      "part_number": "M.S RACK - 1\" X 1\" X 10DP X 40\" LONG",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 244,
+      "part_number": "M.S SIMPLEX SPROCKET - 1/2\" X 12 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 245,
+      "part_number": "M.S SIMPLEX SPROCKET - 1/2\" X 18 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 246,
+      "part_number": "M.S SIMPLEX SPROCKET - 1/2\" X 22 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 247,
+      "part_number": "M.S SIMPLEX SPROCKET - 1/2\" X 24 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 248,
+      "part_number": "M.S DUPLEX SPROCKET - 1/2\" X 24 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 249,
+      "part_number": "M.S DUPLEX SPROCKET - 1/2\" X 24 TEETH\nWITHOUT HUB",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 250,
+      "part_number": "M.S DUPLEX SPROCKET - 1/2\" X 18 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 251,
+      "part_number": "M.S DUPLEX SPROCKET - 1/2\" X 12 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 252,
+      "part_number": "M.S TRIPLEX SPROCKET - 1\" X 22 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 253,
+      "part_number": "M.S FOURPLEX SPROCKET - 1\" X 19 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 254,
+      "part_number": "M.S FOURPLEX SPROCKET - 1\" X 22 TEETH",
+      "description": "Item from Albro - updated",
+      "brand": "",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Albro - updated"
+    },
+    {
+      "id": 255,
+      "part_number": "3TW72911AW66",
+      "description": "Item from Siemens - DOL STARTER",
+      "brand": "SIEMENS",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Siemens - DOL STARTER"
+    },
+    {
+      "id": 256,
+      "part_number": "3TW72911A.71",
+      "description": "Item from Siemens - DOL STARTER",
+      "brand": "SIEMENS",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Siemens - DOL STARTER"
+    },
+    {
+      "id": 257,
+      "part_number": "1LE7501-OCB32-3AA4",
+      "description": "Item from AC motor",
+      "brand": "SIEMENS",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "AC motor"
+    },
+    {
+      "id": 258,
+      "part_number": "1LE7501-0EB42-3AA4",
+      "description": "Item from AC motor",
+      "brand": "SIEMENS",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "AC motor"
+    },
+    {
+      "id": 259,
+      "part_number": "1LE7501-1BB23-5AA4",
+      "description": "Item from AC motor",
+      "brand": "SIEMENS",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "AC motor"
+    },
+    {
+      "id": 260,
+      "part_number": "1LE7501-1CB03-5AA4",
+      "description": "Item from AC motor",
+      "brand": "SIEMENS",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "AC motor"
+    },
+    {
+      "id": 261,
+      "part_number": "FTE-500-230/240V-Y-150-T/CK",
+      "description": "Item from Book1",
+      "brand": "Ceramicx",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 262,
+      "part_number": "FTE-500-230/240V-Y-150N",
+      "description": "Item from Book1",
+      "brand": "Ceramicx",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 263,
+      "part_number": "FTE-400-230/240V-Y-150-T/CK",
+      "description": "Item from Book1",
+      "brand": "Ceramicx",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 264,
+      "part_number": "FTE-400-230/240V-Y-150N",
+      "description": "Item from Book1",
+      "brand": "Ceramicx",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 265,
+      "part_number": "FTE-500-230/240V-Y-150-T/CK",
+      "description": "Item from Book1",
+      "brand": "Elstein",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 266,
+      "part_number": "FTE-500-230/240V-Y-150N",
+      "description": "Item from Book1",
+      "brand": "Elstein",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 267,
+      "part_number": "FTE-350-230/240V-Y-150-T/CK",
+      "description": "Item from Book1",
+      "brand": "Elstein",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 268,
+      "part_number": "FTE-350-230/240V-Y-150N",
+      "description": "Item from Book1",
+      "brand": "Elstein",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 269,
+      "part_number": "FTE-300-230/240V-Y-150-T/CK",
+      "description": "Item from Book1",
+      "brand": "Ceramicx",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 270,
+      "part_number": "FTE-300-230/240V-Y-150N",
+      "description": "Item from Book1",
+      "brand": "Ceramicx",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 271,
+      "part_number": "SCE-H-500W-230V-Y-TCK",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 272,
+      "part_number": "SCE-H-500W-230V-Y",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 273,
+      "part_number": "FCE-T-650W-230V-Y-TCK",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 274,
+      "part_number": "FCE-T-650W-230V-Y",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 275,
+      "part_number": "FCE-T-500W-230V-Y-TCK",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 276,
+      "part_number": "FCE-T-500W-230V-Y",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 277,
+      "part_number": "FCE-T-400W-230V-Y-TCK",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 278,
+      "part_number": "FCE-T-400W-230V-Y",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 279,
+      "part_number": "FCE-T-350W-230V-Y-TCK",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 280,
+      "part_number": "FCE-T-350W-230V-Y",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 281,
+      "part_number": "FCE-T-300W-230V-Y-TCK",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 282,
+      "part_number": "FCE-T-300W-230V-Y",
+      "description": "Item from Book1",
+      "brand": "MACHINECRAFT",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 283,
+      "part_number": "FQE-600W-230V-MBKFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 284,
+      "part_number": "FQE-600W-230V-MBNFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 285,
+      "part_number": "FQE-500W-230V-MBKFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 286,
+      "part_number": "FQE-500W-230V-MBNFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 287,
+      "part_number": "FQE-400W-230V-MBKFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 288,
+      "part_number": "FQE-400W-230V-MBNFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 289,
+      "part_number": "FQE-300W-230V-MBKFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 290,
+      "part_number": "FQE-300W-230V-MBNFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 291,
+      "part_number": "QHS-750",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 292,
+      "part_number": "Part Number",
+      "description": "Item from Book1",
+      "brand": "BRAND",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 293,
+      "part_number": "FQE-500W-230V-MBNFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    },
+    {
+      "id": 294,
+      "part_number": "FQE-400W-230V-MBNFA",
+      "description": "Item from Book1",
+      "brand": "CERAMICX",
+      "price": 0,
+      "quantity": 0,
+      "min_stock": 0,
+      "category": "Book1"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Eaton MCCB MCB Contactor",
+      "count": 30
+    },
+    {
+      "name": "Omron",
+      "count": 2
+    },
+    {
+      "name": "CERAMIX",
+      "count": 7
+    },
+    {
+      "name": "Old Mitsubishi",
+      "count": 72
+    },
+    {
+      "name": "Murr",
+      "count": 0
+    },
+    {
+      "name": "SMC",
+      "count": 0
+    },
+    {
+      "name": "UNISON STOCK",
+      "count": 0
+    },
+    {
+      "name": "GRAND POLYCOAT STOCK",
+      "count": 5
+    },
+    {
+      "name": "Nvent Hoffman",
+      "count": 0
+    },
+    {
+      "name": "TEKNIC",
+      "count": 15
+    },
+    {
+      "name": "Bearing",
+      "count": 0
+    },
+    {
+      "name": "Cylinder's SMC & Festo",
+      "count": 0
+    },
+    {
+      "name": "Autoloader stocking BOM",
+      "count": 0
+    },
+    {
+      "name": "Mitsubishi",
+      "count": 0
+    },
+    {
+      "name": "Elstien-Werk",
+      "count": 0
+    },
+    {
+      "name": "Gearbox",
+      "count": 0
+    },
+    {
+      "name": "Autonics",
+      "count": 2
+    },
+    {
+      "name": "Sprocket & Chain",
+      "count": 12
+    },
+    {
+      "name": "Updated Mitsubishi (contact@machinecraft.org)",
+      "count": 0
+    },
+    {
+      "name": "Trinity Touch",
+      "count": 0
+    },
+    {
+      "name": "Precision Valve",
+      "count": 6
+    },
+    {
+      "name": "Pneumax",
+      "count": 0
+    },
+    {
+      "name": "eaton BOM",
+      "count": 0
+    },
+    {
+      "name": "INDO ELECTRICALS",
+      "count": 3
+    },
+    {
+      "name": "Book1",
+      "count": 34
+    },
+    {
+      "name": "Apratek",
+      "count": 0
+    },
+    {
+      "name": "Linear Rail",
+      "count": 21
+    },
+    {
+      "name": "IAC( Delhi) Delivery Non returnable challan",
+      "count": 0
+    },
+    {
+      "name": "Heaters - old",
+      "count": 0
+    },
+    {
+      "name": "GEAR BOX STOCK",
+      "count": 0
+    },
+    {
+      "name": "SICK STOCK",
+      "count": 0
+    },
+    {
+      "name": "LAPP STOCK",
+      "count": 27
+    },
+    {
+      "name": "xxxx - Inventory_Template",
+      "count": 0
+    },
+    {
+      "name": "Gearbox (contact@machinecraft.org)",
+      "count": 0
+    },
+    {
+      "name": "PNF STOCK",
+      "count": 9
+    },
+    {
+      "name": "EBM PAPST",
+      "count": 1
+    },
+    {
+      "name": "LAPP CABLE STOCK",
+      "count": 0
+    },
+    {
+      "name": "Updated Mitsubishi",
+      "count": 0
+    },
+    {
+      "name": "PHOENIX.",
+      "count": 17
+    },
+    {
+      "name": "Festo Fittings NPQE - QS FOX Pricing",
+      "count": 0
+    },
+    {
+      "name": "SMC-new",
+      "count": 0
+    },
+    {
+      "name": "Servo component selection",
+      "count": 0
+    },
+    {
+      "name": "HICOOL STOCK",
+      "count": 1
+    },
+    {
+      "name": "Cylinder",
+      "count": 0
+    },
+    {
+      "name": "Wohner",
+      "count": 0
+    },
+    {
+      "name": "CRYDOM STOCK",
+      "count": 1
+    },
+    {
+      "name": "Albro - updated",
+      "count": 23
+    },
+    {
+      "name": "Lathe - Master",
+      "count": 0
+    },
+    {
+      "name": "Siemens - DOL STARTER",
+      "count": 2
+    },
+    {
+      "name": "FESTO",
+      "count": 0
+    },
+    {
+      "name": "Electrical Development Discussion",
+      "count": 0
+    },
+    {
+      "name": "AC motor",
+      "count": 4
+    },
+    {
+      "name": "Machinecraft discount structure",
+      "count": 0
+    },
+    {
+      "name": "Machinecraft mccb 19-8-23",
+      "count": 0
+    },
+    {
+      "name": "All RFQ Sheet 24-25 (contact@machinecraft.org 5) N",
+      "count": 0
+    },
+    {
+      "name": "RFQ 13 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 14 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 05 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 02 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 16 - 24-25 SV",
+      "count": 0
+    },
+    {
+      "name": "RFQ 12 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 10 - 24-25 Machinecraft",
+      "count": 0
+    },
+    {
+      "name": "RFQ 08 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 06 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 01 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 04 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 09 - 24-25 Sealing Cover",
+      "count": 0
+    },
+    {
+      "name": "RFQ 07 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 15 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 11 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "RFQ 03 - 24-25",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 7) (cad@machinecraft.org)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 3)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 7)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (ece@machinecraft.org 2)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 5)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 2)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org)",
+      "count": 0
+    },
+    {
+      "name": "Copy of Inward Register File 24-25 (Procurement@machinecraft.org 7) (cad@machinecraft.org) N",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 4)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 6)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 7) (cad@machinecraft.org 3)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (ece@machinecraft.org)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 7) (cad@machinecraft.org 2)",
+      "count": 0
+    },
+    {
+      "name": "Inward Register File 24-25 (Procurement@machinecraft.org 5) (ece@machinecraft.org)",
+      "count": 0
+    }
+  ],
+  "total_items": 294
+}

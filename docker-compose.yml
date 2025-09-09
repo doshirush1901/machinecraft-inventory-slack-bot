@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  machinecraft-bot:
+    build: .
+    container_name: machinecraft-inventory-bot
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - SLACK_SIGNING_SECRET=${SLACK_SIGNING_SECRET}
+      - FLASK_ENV=production
+    volumes:
+      - ./machinecraft_inventory_pipeline.db:/app/machinecraft_inventory_pipeline.db:ro
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - machinecraft-network
+
+networks:
+  machinecraft-network:
+    driver: bridge

@@ -1,0 +1,27 @@
+Please make stocking BOM of all electrical Brands. SOme of them are as follows:
+1. Murr - solenoid end cap with LED. M12 connectors - 3pin and 4 pin - straight and elbow, cable entry systems
+2. Pheonix contact - stickly cable tie clamps, Terminal blocks - spring type in diffrent colors,ethernet switch, power supply,  electrical tools, conduit, conduit clamps, din rail, dinrail end cover, Slim relay, solenoid end cap with LED. M12 connectors - 3pin and 4 pin - straight and elbow(any one Murr of Phenonix)
+3. Eaton
+4. Siemens switchgear
+5. Mitsubishi PLC + servo
+6. Sick - light curtain, safety relay, reed switch, reed switch with M8 connector, 3-3-4 pin T coupling for reed switch, proximity sensor, thru beem , retroreflective, with refelctors
+7. Elstein heaters - ask murati for the reflector assembly in extruded aluminium ( EBF - order a sample). will make th extrusin tool locally and then make it inhouse
+8. Shrink sleeves
+9. Find 1 smaller size of ribbon for component marking( have laready ordered 1 pc in yellow - check if it is okay in application)
+10. Woehner - busbar systems, entry shroud for MCB shortlink
+11. Weidmuller - ethernet switch, power supply, harting connector
+12. Omron - power supply mesh type, and industrial type
+13. Lapp cable - single core and multi core, also order red/white and blue/wite specially in 0.75mm2, servo cables, cable entry systems ( airtight)
+14. Igus - servo cables, drag chains
+15. PNF - capasitive sensor, long range retrorefelctive
+16. local - cable ties -  in different colours, conduit, conduit ends, conduit clamps, 
+17. Unison - SSR buck style, SSR - MCB type, heat sink
+18. Crydom - SSR buck type, heat sink
+19. Indo electrical - find alternatives
+20. Electrical systems marking systems - mostly in pheonix
+
+
+Add all other brands which we use here
+
+Manan Doshi
+04.02.2023

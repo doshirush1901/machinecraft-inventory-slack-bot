@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machinecraft Inventory Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .item-card { transition: transform 0.2s; cursor: pointer; }
+        .item-card:hover { transform: translateY(-2px); }
+        .price { color: #198754; font-weight: bold; }
+        .low-stock { color: #dc3545; }
+        .search-highlight { background-color: yellow; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container-fluid">
+            <span class="navbar-brand">🏭 Machinecraft Inventory System</span>
+            <div class="d-flex">
+                <button class="btn btn-outline-light btn-sm me-2" onclick="showStats()">📊 Stats</button>
+                <button class="btn btn-outline-light btn-sm" onclick="exportData()">📥 Export</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="card mb-3">
+                    <div class="card-header">Categories</div>
+                    <div class="list-group list-group-flush" id="categories">
+                        <a href="#" class="list-group-item list-group-item-action active" data-cat="all">All Items (10)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="mitsubishi">Mitsubishi (4)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="festo">FESTO (2)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="smc">SMC (1)</a>
+                        <a href="#" class="list-group-item list-group-item-action" data-cat="other">Others (3)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9">
+                <!-- Search -->
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Search by part number, description, or brand...">
+                            <button class="btn btn-primary" onclick="searchItems()">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div class="d-flex justify-content-between mb-3">
+                    <span id="resultsCount">10 items found</span>
+                    <select class="form-select w-auto" id="sortSelect" onchange="sortItems()">
+                        <option value="part_number">Sort by Part Number</option>
+                        <option value="description">Sort by Description</option>
+                        <option value="price">Sort by Price</option>
+                        <option value="quantity">Sort by Quantity</option>
+                    </select>
+                </div>
+
+                <!-- Items Grid -->
+                <div class="row" id="itemsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stats Modal -->
+    <div class="modal fade" id="statsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Inventory Statistics</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="statsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sample inventory data
+        const inventory = [
+            {id: 1, part_number: "FX2N-16EX-ES/UL", description: "Mitsubishi PLC Input Module 16 Points", brand: "Mitsubishi", price: 750, quantity: 1, min_stock: 2, category: "mitsubishi"},
+            {id: 2, part_number: "FX2N-16EYT-ESS/UL", description: "Mitsubishi PLC Output Module 16 Points", brand: "Mitsubishi", price: 810, quantity: 3, min_stock: 2, category: "mitsubishi"},
+            {id: 3, part_number: "FX2N-2AD", description: "Mitsubishi PLC Analog Input Module", brand: "Mitsubishi", price: 588, quantity: 1, min_stock: 1, category: "mitsubishi"},
+            {id: 4, part_number: "FX3U-64MT/ESS", description: "Mitsubishi PLC CPU Module 64 Points", brand: "Mitsubishi", price: 1260, quantity: 0, min_stock: 1, category: "mitsubishi"},
+            {id: 5, part_number: "MS6-LF-1/2-ERM", description: "FESTO Filter 1/2 inch with Pressure Gauge", brand: "FESTO", price: 270, quantity: 0, min_stock: 5, category: "festo"},
+            {id: 6, part_number: "MS6-LR-1/2-ERM", description: "FESTO Pressure Regulator 1/2 inch", brand: "FESTO", price: 312, quantity: 2, min_stock: 3, category: "festo"},
+            {id: 7, part_number: "SMC-CJ2B10-15", description: "SMC Cylinder Bore 10mm Stroke 15mm", brand: "SMC", price: 192, quantity: 5, min_stock: 4, category: "smc"},
+            {id: 8, part_number: "6205-2RS", description: "Deep Groove Ball Bearing 25x52x15mm", brand: "SKF", price: 108, quantity: 8, min_stock: 10, category: "other"},
+            {id: 9, part_number: "PH-QUINT-PS/1AC/24DC/10", description: "Phoenix Contact Power Supply 24V 10A", brand: "Phoenix", price: 534, quantity: 1, min_stock: 2, category: "other"},
+            {id: 10, part_number: "E3Z-T61", description: "Omron Photoelectric Sensor Through Beam", brand: "Omron", price: 168, quantity: 4, min_stock: 6, category: "other"}
+        ];
+
+        let filteredItems = [...inventory];
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            displayItems();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Category selection
+            document.querySelectorAll('#categories a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelectorAll('#categories a').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.cat;
+                    filterItems();
+                });
+            });
+
+            // Search on Enter
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') searchItems();
+            });
+        }
+
+        function searchItems() {
+            currentSearch = document.getElementById('searchInput').value.trim();
+            filterItems();
+        }
+
+        function filterItems() {
+            filteredItems = inventory.filter(item => {
+                // Category filter
+                if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+                
+                // Search filter
+                if (currentSearch) {
+                    const searchTerm = currentSearch.toLowerCase();
+                    return item.part_number.toLowerCase().includes(searchTerm) ||
+                           item.description.toLowerCase().includes(searchTerm) ||
+                           item.brand.toLowerCase().includes(searchTerm);
+                }
+                
+                return true;
+            });
+            
+            displayItems();
+        }
+
+        function sortItems() {
+            const sortBy = document.getElementById('sortSelect').value;
+            filteredItems.sort((a, b) => {
+                switch(sortBy) {
+                    case 'part_number': return a.part_number.localeCompare(b.part_number);
+                    case 'description': return a.description.localeCompare(b.description);
+                    case 'price': return a.price - b.price;
+                    case 'quantity': return b.quantity - a.quantity;
+                    default: return 0;
+                }
+            });
+            displayItems();
+        }
+
+        function displayItems() {
+            const grid = document.getElementById('itemsGrid');
+            const resultsCount = document.getElementById('resultsCount');
+            
+            resultsCount.textContent = `${filteredItems.length} items found`;
+            
+            if (filteredItems.length === 0) {
+                grid.innerHTML = '<div class="col-12 text-center py-5"><h4 class="text-muted">No items found</h4></div>';
+                return;
+            }
+            
+            grid.innerHTML = filteredItems.map(item => {
+                const isLowStock = item.quantity <= item.min_stock;
+                const stockClass = isLowStock ? 'low-stock' : '';
+                const highlightedPart = currentSearch ? 
+                    item.part_number.replace(new RegExp(currentSearch, 'gi'), 
+                    match => `<span class="search-highlight">${match}</span>`) : item.part_number;
+                
+                return `
+                    <div class="col-lg-4 col-md-6 mb-3">
+                        <div class="card item-card h-100" onclick="showItemDetails(${item.id})">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h6 class="card-title">${highlightedPart}</h6>
+                                    <span class="badge bg-${isLowStock ? 'danger' : 'success'}">${isLowStock ? 'LOW' : 'OK'}</span>
+                                </div>
+                                <p class="card-text small">${item.description}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="price">₹${item.price}</span>
+                                    <span class="${stockClass}">Qty: ${item.quantity}</span>
+                                </div>
+                                <small class="text-muted">${item.brand}</small>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function showItemDetails(itemId) {
+            const item = inventory.find(i => i.id === itemId);
+            if (!item) return;
+            
+            alert(`Item Details:\n\nPart Number: ${item.part_number}\nDescription: ${item.description}\nBrand: ${item.brand}\nPrice: ₹${item.price}\nQuantity: ${item.quantity}\nMinimum Stock: ${item.min_stock}`);
+        }
+
+        function showStats() {
+            const totalItems = inventory.length;
+            const lowStockItems = inventory.filter(item => item.quantity <= item.min_stock).length;
+            const totalValue = inventory.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            
+            document.getElementById('statsContent').innerHTML = `
+                <div class="row text-center">
+                    <div class="col-4">
+                        <h3 class="text-primary">${totalItems}</h3>
+                        <p>Total Items</p>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="text-danger">${lowStockItems}</h3>
+                        <p>Low Stock</p>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="text-success">₹${totalValue.toFixed(0)}</h3>
+                        <p>Total Value</p>
+                    </div>
+                </div>
+            `;
+            
+            new bootstrap.Modal(document.getElementById('statsModal')).show();
+        }
+
+        function exportData() {
+            const csv = "Part Number,Description,Brand,Price,Quantity,Min Stock\n" +
+                       filteredItems.map(item => 
+                           `"${item.part_number}","${item.description}","${item.brand}",${item.price},${item.quantity},${item.min_stock}`
+                       ).join('\n');
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'inventory_export.csv';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html> 
