@@ -22,12 +22,72 @@ logger = logging.getLogger(__name__)
 app = Flask(__name__)
 
 class ProductionSlackBot:
-    def __init__(self, db_path="machinecraft_inventory_pipeline.db"):
-        self.db_path = db_path
+    def __init__(self, db_path=None):
+        # Try different database paths for Railway deployment
+        if db_path is None:
+            possible_paths = [
+                "machinecraft_inventory_pipeline.db",
+                "/app/machinecraft_inventory_pipeline.db",
+                "/tmp/machinecraft_inventory_pipeline.db"
+            ]
+            for path in possible_paths:
+                if os.path.exists(path):
+                    self.db_path = path
+                    break
+            else:
+                # Create a minimal database if none exists
+                self.db_path = "machinecraft_inventory_pipeline.db"
+                self.create_minimal_database()
+        else:
+            self.db_path = db_path
         self.slack_token = os.environ.get("SLACK_BOT_TOKEN")
         self.signing_secret = os.environ.get("SLACK_SIGNING_SECRET")
         self.client = WebClient(token=self.slack_token)
         self.signature_verifier = SignatureVerifier(self.signing_secret) if self.signing_secret else None
+    
+    def create_minimal_database(self):
+        """Create a minimal database for Railway deployment"""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            
+            # Create the silver_inventory_items table
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS silver_inventory_items (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    part_number TEXT,
+                    description TEXT,
+                    brand TEXT,
+                    unit_price_inr REAL,
+                    quantity INTEGER,
+                    total_value_inr REAL,
+                    stock_status TEXT,
+                    category TEXT
+                )
+            ''')
+            
+            # Insert a sample item for testing
+            cursor.execute('''
+                INSERT INTO silver_inventory_items 
+                (part_number, description, brand, unit_price_inr, quantity, total_value_inr, stock_status, category)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+            ''', (
+                'SAMPLE-001',
+                'Sample Inventory Item for Testing',
+                'Machinecraft',
+                1000.0,
+                10,
+                10000.0,
+                'In Stock',
+                'Sample Components'
+            ))
+            
+            conn.commit()
+            conn.close()
+            logger.info(f"Created minimal database at {self.db_path}")
+            
+        except Exception as e:
+            logger.error(f"Error creating minimal database: {str(e)}")
         
     def connect_db(self):
         """Connect to the inventory database"""
@@ -452,11 +512,28 @@ def slack_events():
 @app.route('/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
-    return jsonify({
-        'status': 'healthy',
-        'timestamp': datetime.now().isoformat(),
-        'database': 'connected' if os.path.exists(bot.db_path) else 'disconnected'
-    })
+    try:
+        # Test database connection
+        conn = bot.connect_db()
+        cursor = conn.execute("SELECT COUNT(*) FROM silver_inventory_items")
+        count = cursor.fetchone()[0]
+        conn.close()
+        
+        return jsonify({
+            'status': 'healthy',
+            'timestamp': datetime.now().isoformat(),
+            'database': 'connected',
+            'items_count': count,
+            'bot_token_set': bool(bot.slack_token),
+            'signing_secret_set': bool(bot.signing_secret)
+        })
+    except Exception as e:
+        return jsonify({
+            'status': 'unhealthy',
+            'timestamp': datetime.now().isoformat(),
+            'error': str(e),
+            'database': 'error'
+        }), 500
 
 @app.route('/test', methods=['GET'])
 def test_endpoint():
