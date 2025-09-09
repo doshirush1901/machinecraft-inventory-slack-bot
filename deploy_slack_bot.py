@@ -566,11 +566,23 @@ if __name__ == '__main__':
     # Get port from environment (Railway sets this)
     port = int(os.environ.get("PORT", 5000))
     
-    logger.info("Starting Machinecraft Inventory Slack Bot...")
-    logger.info(f"Database: {bot.db_path}")
-    logger.info(f"Bot token: {'Set' if bot.slack_token else 'Not set'}")
-    logger.info(f"Signing secret: {'Set' if bot.signing_secret else 'Not set'}")
-    logger.info(f"Port: {port}")
+    logger.info("🚀 Starting Machinecraft Inventory Slack Bot...")
+    logger.info(f"📊 Database: {bot.db_path}")
+    logger.info(f"🔑 Bot token: {'Set' if bot.slack_token else 'Not set'}")
+    logger.info(f"🔐 Signing secret: {'Set' if bot.signing_secret else 'Not set'}")
+    logger.info(f"🌐 Port: {port}")
+    
+    # Test database connection
+    try:
+        conn = bot.connect_db()
+        cursor = conn.execute("SELECT COUNT(*) FROM silver_inventory_items")
+        count = cursor.fetchone()[0]
+        conn.close()
+        logger.info(f"✅ Database connected: {count:,} items available")
+    except Exception as e:
+        logger.warning(f"⚠️  Database warning: {str(e)}")
+        logger.info("🔄 Using fallback database...")
     
     # Run Flask app
+    logger.info(f"🚀 Starting server on port {port}...")
     app.run(host='0.0.0.0', port=port, debug=False)
