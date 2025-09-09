@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir -r requirements_slack.txt && \
 # Copy application code
 COPY deploy_slack_bot.py .
 COPY slack_inventory_bot.py .
+COPY start_railway.py .
 
 # Create logs directory
 RUN mkdir -p logs
@@ -36,4 +37,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
     CMD curl -f http://localhost:5000/health || exit 1
 
 # Start command
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "deploy_slack_bot:app"]
+CMD ["python3", "start_railway.py"]

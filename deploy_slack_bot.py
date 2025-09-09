@@ -563,10 +563,14 @@ if __name__ == '__main__':
         logger.error("SLACK_BOT_TOKEN environment variable not set")
         exit(1)
     
+    # Get port from environment (Railway sets this)
+    port = int(os.environ.get("PORT", 5000))
+    
     logger.info("Starting Machinecraft Inventory Slack Bot...")
     logger.info(f"Database: {bot.db_path}")
     logger.info(f"Bot token: {'Set' if bot.slack_token else 'Not set'}")
     logger.info(f"Signing secret: {'Set' if bot.signing_secret else 'Not set'}")
+    logger.info(f"Port: {port}")
     
     # Run Flask app
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=port, debug=False)
