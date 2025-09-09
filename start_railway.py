@@ -34,7 +34,8 @@ def main():
         print(f"✅ Database connected: {count:,} items available")
     except Exception as e:
         print(f"⚠️  Database warning: {str(e)}")
-        print("🔄 Using fallback database...")
+        print("🔄 Creating fallback database...")
+        # The bot will create a minimal database automatically
     
     # Start the Flask app
     print(f"🚀 Starting server on port {port}...")
